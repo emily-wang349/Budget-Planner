@@ -18,7 +18,14 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public TextView output;
-    public int current_budget;
+    public int remaining_budget;
+    public int income;
+    public  int food_expense;
+    public int general_expense;
+    public int house_expense;
+    public int personal_expense;
+    public int transport_expense;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         output = (TextView) findViewById(R.id.main_text);
-        current_budget = 0;
+        remaining_budget = 0;
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +53,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public  void add_expense (View view){
+        // Do something in response to non-existent button
     }
 
     @Override
@@ -87,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Review) {
-            output.setText("Your current buget is "+ current_budget);
+            output.setText("Your current buget is "+ remaining_budget);
         } else if (id == R.id.goal) {
 
         }
